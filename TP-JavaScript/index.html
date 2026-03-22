@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <title>Exercício de JavaScript</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js"></script>
+</head>
+
+<body onload="load()">
+  <h1>Exercício de JavaScript</h1>
+  
+  <main>
+    
+    <form id="form1">
+      <h2>Aquisição</h2>
+      <fieldset>
+        <legend>Detalhes</legend>
+        <label for="productName">Nome do produto:</label>
+        <input type="text" id="productName" />
+        <label for="productCost">Custo:</label>
+        <input type="number" id="productCost" />
+      </fieldset>
+      <fieldset id="origin">
+        <legend>Origem</legend>
+        <input type="radio" name="origin" id="o1" />
+        <label for="o1">Nacional</label>
+        <input type="radio" name="origin" id="o2" />
+        <label for="o2">Internacional</label>
+      </fieldset>
+      <button type="button" id="addRow">
+        Processar aquisição
+      </button>
+    </form>
+
+    <h2>Aquisições processadas</h2>
+    <table>
+      <caption>Tabela de aquisições processadas</caption>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Origem</th>
+          <th>Custo</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </main>
+</body>
+
+</html>
