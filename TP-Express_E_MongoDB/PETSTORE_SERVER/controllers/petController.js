@@ -123,3 +123,38 @@ exports.getById = async (req, res) => {
         });
     }
 }
+
+exports.delete = async (req, res) => {
+    try {
+        // Identificador do pet a remover vem num parâmetro do pedido.
+        const petId = req.params.id;
+
+        // Se o pet a remover não existir, devolve null.
+        const deletedPetDocument = await Pet.findByIdAndDelete(petId);
+
+        if(!deletedPetDocument) {
+            // 404 = Not Found.
+            return res.status(404).json({
+                success: false, 
+                message: 'Pet a remover não existe.'
+            });
+        }
+        
+        // 200 = OK
+        res.status(200).json({
+            success: true,
+            message: 'Pet removido com sucesso',
+            deleted: deletedPetDocument
+        })
+
+    } catch (error) {
+        // 500 = Internal Server Error.
+        res.status(500).json({
+        success: false, 
+        message: 'Erro do servidor durante a remoção de um pet.'
+        });
+
+        // O que terá acontecido?
+        console.error(error);
+    }
+}

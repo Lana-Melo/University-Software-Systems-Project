@@ -23,6 +23,9 @@ router.get('/', petController.getAll);
 // Rota para obter um pet pelo seu id.
 router.get('/:id', petController.getById);
 
+// Rota para deletar um pet pelo seu id.
+router.delete('/:id', petController.delete);
+
 module.exports = router;
 
 // -----
